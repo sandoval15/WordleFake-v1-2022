@@ -1,0 +1,71 @@
+#teclado{
+    width: 100%;
+    bottom:10px;
+    left:0px;
+    right:0px;
+    padding: 0px;
+    position:absolute;
+}
+
+.teclas{
+    margin:0 auto;
+}
+
+.tecla{
+    background-color: rgb(204, 204, 204);
+    border-radius: 5px;
+    width: 50px;
+    height: 60px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.tecla:hover{
+    cursor:pointer;
+}
+
+#tabla{
+    margin-top: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.casilla{
+    width: 50px;
+    height: 50px;
+    border: 2px solid rgb(192, 191, 191);
+    cursor:default;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.ilumina{
+    width: 50px;
+    height: 60px;
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    transition: 0.3s;
+    opacity: 0;
+}
+
+.ilumina:hover{
+    opacity: 0.4;
+}
+
+p{
+    color: rgb(42, 42, 44);
+    margin:0 auto;
+    font-family:Comic Sans MS;
+    font-size: 20px;
+    font-weight: bolder;
+    user-select:none;
+}
+
+.casletra{
+    font-size: 40px;
+    margin-bottom: 10px;
+}
