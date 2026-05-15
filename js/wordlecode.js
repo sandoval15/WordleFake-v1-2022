@@ -230,18 +230,18 @@ function enter(e) {
 
 function validar(pal) {
     if (palabras.includes(pal)) return true;
+    if (pal.endsWith('ces')) {
+        return validar(pal.slice(0, -3) + 'z');
+    }
+    if (pal.endsWith('es')) {
+        return validar(pal.slice(0, -2));
+    }
     if (pal.endsWith('s')) {
         if(pal.endsWith('ss')) {
             return false;
         }
-        if (pal.endsWith('ces')) {
-            return validar(pal.slice(0, -3) + 'z');
-        }
-        if (pal.endsWith('es')) {
-            return validar(pal.slice(0, -2));
-        }
         return validar(pal.slice(0, -1));
-    }
+    } 
     return false;
 }
 
