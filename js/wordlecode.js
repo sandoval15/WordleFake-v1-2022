@@ -37,11 +37,11 @@ function limpiarcasillas(){
     }
 
     for(let i=0; i<document.getElementsByClassName("tecla").length; i++){
-        document.getElementsByClassName("tecla")[i].setAttribute("Style", "background-color: rgb(204, 204, 204);");
-        document.getElementsByClassName("tecla")[i].lastChild.setAttribute("style", "color: rgb(42, 42, 44);")
+        let tecla = document.getElementsByClassName("tecla")[i];
+        tecla.setAttribute("Style", "background-color: rgb(204, 204, 204);");
+        tecla.lastChild.setAttribute("style", "color: rgb(42, 42, 44);")
+        tecla.setAttribute("validacion", "0");
     }
-
-    alert("limpie");
     cas = 0;
     casmin = 0;
     cont = 1;
@@ -234,13 +234,11 @@ function validar(pal) {
         return validar(pal.slice(0, -3) + 'z');
     }
     if (pal.endsWith('es')) {
-        return validar(pal.slice(0, -2));
+        if(!pal.slice(0, -1).endsWith('^[aeiouAEIOU]$')) return validar(pal.slice(0, -2));
     }
     if (pal.endsWith('s')) {
-        if(pal.endsWith('ss')) {
-            return false;
-        }
-        return validar(pal.slice(0, -1));
+        if(pal.endsWith('ss')) return false;
+        if(pal.slice(0, -1).endsWith('^[aeiouAEIOU]$')) return validar(pal.slice(0, -1));
     } 
     return false;
 }
